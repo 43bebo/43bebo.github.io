@@ -1,0 +1,94 @@
+/* CSS Variables for easy theme switching */
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333333;
+    --btn-bg: #ffffff;
+    --btn-text: #333333;
+    --btn-border: #cccccc;
+    --btn-hover: #e0e0e0;
+}
+
+/* This overrides the colors when dark mode is active */
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --btn-bg: #1e1e1e;
+    --btn-text: #ffffff;
+    --btn-border: #444444;
+    --btn-hover: #333333;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    transition: background-color 0.3s, color 0.3s; /* Smooth fade effect */
+    margin: 0;
+}
+
+#theme-toggle {
+    align-self: flex-end;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 1px solid var(--btn-border);
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    font-weight: bold;
+}
+
+.profile-container {
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.username {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.bio {
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.link-btn {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: 2px solid var(--btn-border);
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+/* The Hover Effect */
+.link-btn:hover {
+    transform: scale(1.05); /* Makes the button pop out slightly */
+    background-color: var(--btn-hover);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
